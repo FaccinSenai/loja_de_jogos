@@ -62,7 +62,9 @@ class ProdutosDAO {
     const index = produtos.findIndex(produto => produto.id === id);
     if (index !== -1) {
       produtos.splice(index, 1);
+      return true; // Indica que o produto foi excluído com sucesso
     }
+    return false; // Indica que o produto não foi encontrado
   }
 }
 

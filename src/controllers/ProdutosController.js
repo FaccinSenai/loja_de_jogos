@@ -77,6 +77,8 @@ class ProdutosController {
       res.status(404).send('Produto não encontrado');
     }
   }
+
+  
 }
 
 module.exports = new ProdutosController();
