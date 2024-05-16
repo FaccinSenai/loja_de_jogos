@@ -6,17 +6,32 @@
         <tr>
             <th>Produto</th>
             <th>Preço</th>
+            <th>Criar</th>
+            <th>Editar</th>
             <th>Deletar</th>
         </tr>
     </thead>
     <tbody>
         {{#each produtos}}
         <tr>
+            
             <td>{{this.nome}}</td>
             <td>{{this.preco}}</td>
-            <td>
-                <form action="/livros/{{this.id}}/delete" method="POST">
-                    <button type="submit">Excluir</button>
+            <td class="center">
+                <form action="/produtos/{{this.id}}/create" method="GET">
+                    <button type="submit" class="btn-create">Criar</button>
+                </form>
+            </td>
+            <td class="center">
+                <form action="/produtos/{{this.id}}/edit" method="GET">
+                    <button type="submit" class="btn-edit">Editar</button>
+                </form>
+            </td>
+            
+            <td class="center">
+                <form action="/produtos/{{this.id}}/delete" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn-delete">Excluir</button>
                 </form>
             </td>
         </tr>
