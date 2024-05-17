@@ -1,12 +1,13 @@
 <h1>Lista de produtos</h1>
 
+<a href="/produtos/create" class="btn-create">Criar Produto</a>
+
 {{#if produtosSize}}
 <table border="1">
     <thead>
         <tr>
             <th>Produto</th>
             <th>Preço</th>
-            <th>Criar</th>
             <th>Editar</th>
             <th>Deletar</th>
         </tr>
@@ -14,20 +15,13 @@
     <tbody>
         {{#each produtos}}
         <tr>
-            
             <td>{{this.nome}}</td>
             <td>{{this.preco}}</td>
-            <td class="center">
-                <form action="/produtos/{{this.id}}/create" method="GET">
-                    <button type="submit" class="btn-create">Criar</button>
-                </form>
-            </td>
             <td class="center">
                 <form action="/produtos/{{this.id}}/edit" method="GET">
                     <button type="submit" class="btn-edit">Editar</button>
                 </form>
             </td>
-            
             <td class="center">
                 <form action="/produtos/{{this.id}}/delete" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
