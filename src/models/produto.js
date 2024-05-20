@@ -1,17 +1,20 @@
 class Produto {
-  constructor({ id, nome, promocao, preco, desconto, precoPromocao }) {
+  constructor({ id, nome, promocao, desconto, preco, precoDesconto }) {
     this.id = id;
     this.nome = nome;
-    this.promocao = promocao ? promocao : false;
-    this.desconto = desconto ? desconto : 0;
+    this.promocao = promocao;
+    this.desconto = desconto;
     this.preco = preco;
-    this.precoPromocao = precoPromocao ? precoPromocao : preco;
+    this.precoDesconto = precoDesconto;
   }
 
   calculaPromocao() {
-    let percetual = ((100 - parseInt(this.desconto)) / 100);
-    this.precoPromocao = parseFloat(this.preco * percetual);
+    if (this.promocao && this.desconto > 0) {
+      this.precoDesconto = this.preco - (this.preco * (this.desconto / 100));
+    } else {
+      this.precoDesconto = this.preco;
+    }
   }
 }
 
-module.exports = Produto
+module.exports = Produto;
