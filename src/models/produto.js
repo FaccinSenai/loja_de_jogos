@@ -1,3 +1,4 @@
+// produto.js
 class Produto {
   constructor({ id, nome, promocao, desconto, preco, precoDesconto }) {
     this.id = id;
@@ -9,7 +10,7 @@ class Produto {
   }
 
   calculaPromocao() {
-    if (this.promocao && this.desconto > 0) {
+    if (this.promocao) {
       this.precoDesconto = this.preco - (this.preco * (this.desconto / 100));
     } else {
       this.precoDesconto = this.preco;

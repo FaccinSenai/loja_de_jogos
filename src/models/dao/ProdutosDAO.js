@@ -1,3 +1,4 @@
+// produtosDAO.js
 const Produto = require("../produto");
 
 let produtos = [
@@ -24,47 +25,43 @@ let produtos = [
 ];
 
 class ProdutosDAO {
-  // Retorna a lista de produtos
   listar() {
     for (const produto of produtos) {
-      produto.calculaPromocao()
+      produto.calculaPromocao();
     }
     return produtos;
   }
 
-  // Retorna um produto filtrado pela sua ID
   buscarPorId(id) {
     return produtos.find(produto => produto.id === id);
   }
 
-  // Verifica se existe uma instância de produto com aquele id
   exist(id) {
-    return this.buscarPorId(id) ? false : false;
+    return !!this.buscarPorId(id);
   }
 
-  // Cria e armazena um novo produto
   criar(produto) {
-    produto.id = produtos[produtos.length - 1].id + 1;
-    produtos.push(produto);
-    return parseInt(produto.id);
+    const novoProduto = new Produto({ ...produto, id: produtos[produtos.length - 1].id + 1 });
+    novoProduto.calculaPromocao();
+    produtos.push(novoProduto);
+    return novoProduto.id;
   }
 
-  // Atualiza um produto
   atualizar(id, produtoAtualizado) {
     const index = produtos.findIndex(produto => produto.id === id);
     if (index !== -1) {
-      produtos[index] = produtoAtualizado;
+      produtos[index] = new Produto({ ...produtoAtualizado, id });
+      produtos[index].calculaPromocao();
     }
   }
 
-  // Deleta um produto
   deletar(id) {
     const index = produtos.findIndex(produto => produto.id === id);
     if (index !== -1) {
       produtos.splice(index, 1);
-      return true; // Indica que o produto foi excluído com sucesso
+      return true;
     }
-    return false; // Indica que o produto não foi encontrado
+    return false;
   }
 }
 
