@@ -105,8 +105,15 @@ nav a:hover {
 }
 
 .custom-icon {
+
+  font-size: 32px;
   color: #00a7bd;
 }
+
+.custom-icon {
+  color: #00a7bd;
+}
+
 
 
 
@@ -166,3 +173,5 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+
