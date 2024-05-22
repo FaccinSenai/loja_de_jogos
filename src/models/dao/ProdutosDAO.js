@@ -41,17 +41,15 @@ class ProdutosDAO {
   }
 
   criar(produto) {
-    const novoProduto = new Produto({ ...produto, id: produtos[produtos.length - 1].id + 1 });
-    novoProduto.calculaPromocao();
-    produtos.push(novoProduto);
-    return novoProduto.id;
+    produto.id = produtos.length ? produtos[produtos.length - 1].id + 1 : 1;
+    produtos.push(produto);
+    return produto.id;
   }
 
   atualizar(id, produtoAtualizado) {
     const index = produtos.findIndex(produto => produto.id === id);
     if (index !== -1) {
-      produtos[index] = new Produto({ ...produtoAtualizado, id });
-      produtos[index].calculaPromocao();
+      produtos[index] = produtoAtualizado;
     }
   }
 

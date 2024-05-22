@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
-    margin: 0;
-    padding: 0;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: #4b4b4b;
 }
 
 h1, h2, h3 {
@@ -13,45 +22,7 @@ h1, h2, h3 {
     text-align: center;
 }
 
-header {
-    background-color: #1f1f1f;
-    padding: 20px;
-    text-align: center;
-}
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #2b2b2b;
-    padding: 10px 0;
-}
-
-nav a {
-    color: #e0e0e0;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1em;
-}
-
-nav a:hover {
-    color: #00bcd4;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-}
 
 .link{
   text-decoration: none;
@@ -71,7 +42,7 @@ nav a:hover {
   left: 50%;
   transform: translateX(-50%);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+  transition: all 0.3s ease; 
 }
 
 .box:hover {
@@ -92,7 +63,7 @@ nav a:hover {
 }
 
 .box .item .bx-cloud-upload {
-  font-size: 32px; /* Ajuste o tamanho conforme necessário */
+  font-size: 32px; 
 }
 
 .table-center{
@@ -102,6 +73,7 @@ nav a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-left: 100px;
 }
 
 .custom-icon {
@@ -118,8 +90,10 @@ nav a:hover {
 
 
 table {
-  border-radius: 20px; /* Adiciona cantos arredondados */
+  border-radius: 20px; 
+  
   width: 80%;
+  height: auto;
   border-collapse: collapse;
   margin-top: 20px;
   border: 2px solid #2b2b2b;
@@ -127,6 +101,7 @@ table {
 
 
 th, td {
+    
     border: 2px solid #2b2b2b;
     padding: 12px;
     text-align: left;
@@ -175,3 +150,285 @@ footer {
 }
 
 
+
+
+.left-section{
+  position: fixed;
+  background: #242424;
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 25px 10px;
+  transition: all 0.3s ease;
+}
+
+.left-section h2{
+  color: #364670;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.left-section .sidebar{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.left-section .sidebar .item,
+.left-section .sign-out{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #364670;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.left-section .sidebar .item.active h3,
+.left-section .sidebar .item.active a,
+.left-section .sidebar .item:hover,
+.left-section .sign-out:hover{
+  color: #1976d2;
+}
+
+.left-section .sidebar .item h3,
+.left-section .sign-out h3{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.left-section .sidebar .item a,
+.left-section .sign-out a{
+  font-size: 22px;
+}
+
+.left-section .sidebar .item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none; 
+  color: inherit; 
+}
+
+.left-section .sidebar .item a i {
+  margin-right: 8px;
+}
+
+.left-section .sidebar .item a h3 {
+  margin: 0; 
+}
+
+@media screen and (max-width: 1230px) {
+  .left-section{
+      width: 90px;
+  }
+
+  .left-section h2{
+      font-size: 17px;
+  }
+
+  .left-section .sidebar .item{
+      justify-content: center;
+  }
+
+  .left-section .sidebar .item h3,
+  .left-section .sign-out h3{
+      display: none;
+  }
+
+  .left-section .sidebar .item i,
+  .left-section .sign-out i{
+      font-size: 26px;
+  }
+
+  .main .quick-access{
+      justify-content: space-between;
+  }
+
+  .main .quick-access .item{
+      width: 23%;
+  }
+
+  .main .quick-access .item i{
+      font-size: 36px;
+  }
+
+  .main .quick-access .item h5{
+      font-size: 16px;
+  }
+
+  .main .quick-access .item p,
+  .right-section .profile .info .account p{
+      font-size: 12px;
+  }
+
+  .right-section .widgets .disk{
+      height: 270px;
+  }
+
+  .right-section .widgets .disk .progress .progress-bar{
+      width: 120px;
+      height: 120px;
+  }
+
+  .right-section .widgets .disk .info h5{
+      font-size: 18px;
+  }
+
+  .right-section .widgets .bottom button{
+      font-size: 17px;
+      padding: 12px;
+  }
+
+  .right-section .widgets .bottom .premium .title h5{
+      font-size: 17px;
+  }
+
+  .right-section .widgets .bottom .premium .title i{
+      font-size: 26px;
+  }
+
+  .right-section .widgets .bottom .premium p{
+      font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .left-section{
+      position: absolute;
+      width: 160px;
+      left: -160px;
+      z-index: 1000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .left-section .sidebar .item{
+      justify-content: start;
+  }
+
+  .left-section .sidebar .item h3,
+  .left-section .sign-out h3{
+      display: block;
+  }
+
+  .left-section .sidebar .item i,
+  .left-section .sign-out i{
+      font-size: 22px;
+  }
+
+  .main,
+  .right-section{
+      padding: 15px;
+  }
+
+  .main .header{
+      gap: 10px;
+  }
+
+  .main .header .icon-btns i#menu-btn{
+      display: block;
+  }
+
+  .main .quick-access .item p{
+      text-align: center;
+  }
+
+  .main table tbody tr td.name,
+  .main table tbody tr td.extension,
+  .main table tbody tr td.size{
+      font-size: 13px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  body{
+      flex-direction: column;
+  }
+
+  .main{
+      padding: 26px 15px 0;
+  }
+
+  .main .header{
+      justify-content: start;
+  }
+
+  .main .header .search{
+      width: 30%;
+  }
+
+  .right-section .profile{
+      position: absolute;
+      top: 15px;
+      right: 15px;
+  }
+
+  .right-section .widgets{
+      flex-direction: row;
+      gap: 30px;
+  }
+
+  .right-section .widgets .disk{
+      width: 48%;
+  }
+
+  .right-section .widgets .bottom{
+      justify-content: center;
+      gap: 30px;
+  }
+
+  .right-section .widgets .bottom button{
+      margin: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main{
+      padding: 100px 15px 0;
+  }
+
+  .main .header .search{
+      width: 68%;
+  }
+
+  .right-section .profile{
+      width: 94%;
+  }
+
+  .right-section .widgets .disk .info h5{
+      font-size: 14px;
+  }
+
+  .right-section .widgets .disk .info p{
+      font-size: 13px;
+  }
+}
+
+
+.dashboardpng {
+    padding-top: 50px;
+    border-radius: 25px; 
+    width: 50%; 
+    max-width: 600px;   
+    display: block;
+    margin: auto auto; 
+    animation: pulse 2s infinite;
+
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

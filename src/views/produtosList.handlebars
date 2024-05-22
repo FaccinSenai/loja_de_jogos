@@ -1,46 +1,35 @@
-<h1>Lista de produtos</h1>
 
-
-<div class="box">
-    <div class="item">
-        <a href="/produtos/create" class="bx bx-cloud-upload custom-icon"></a>
-    </div>
-</div>
-
-
-{{#if produtosSize}}
-<div class="table-center">
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Produto</th>
-                <th>Preço</th>
-                <th>Editar</th>
-                <th>Deletar</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each produtos}}
-            <tr>
-                <td>{{this.nome}}</td>
-                <td>{{this.preco}}</td>
-                <td class="center">
-                    <form action="/produtos/{{this.id}}/edit" method="GET">
-                        <button type="submit" class="btn-edit">Editar</button>
-                    </form>
-                </td>
-                <td class="center">
-                    <form action="/produtos/{{this.id}}/delete" method="POST">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn-delete">Excluir</button>
-                    </form>
-                </td>
-            </tr>
-            {{/each}}
-        </tbody>
+  <header>
+    <h1>Lista de Produtos</h1>
+  </header>
+  <main>
+    {{#if produtosSize}}
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each produtos}}
+        <tr>
+          <td><a href="/produtos/{{this.id}}">{{this.nome}}</a></td>
+          <td>R$ {{this.preco}}</td>
+          <td class="actions">
+            <form action="/produtos/{{this.id}}/delete" method="POST" style="display: inline;">
+              <input type="hidden" name="_method" value="DELETE">
+              <button type="submit">Excluir</button>
+            </form>
+            <a href="/produtos/{{this.id}}/edit">Editar</a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
     </table>
-</div>
-
-{{else}}
-<p>Nenhum produto encontrado</p>
-{{/if}}
+    {{else}}
+    <p>Nenhum produto encontrado</p>
+    {{/if}}
+    <a class="button" href="/produtos/create">Criar Produto</a>
+  </main>
