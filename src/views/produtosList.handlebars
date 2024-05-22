@@ -1,35 +1,44 @@
+<div class="box">
+    <div class="item">
+        <a href="/produtos/create" class="bx bx-cloud-upload custom-icon"></a>
+    </div>
+</div>
 
-  <header>
+
+<header>
     <h1>Lista de Produtos</h1>
-  </header>
-  <main>
+</header>
+<main>
     {{#if produtosSize}}
     <table>
-      <thead>
-        <tr>
-          <th>Produto</th>
-          <th>Preço</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each produtos}}
-        <tr>
-          <td><a href="/produtos/{{this.id}}">{{this.nome}}</a></td>
-          <td>R$ {{this.preco}}</td>
-          <td class="actions">
-            <form action="/produtos/{{this.id}}/delete" method="POST" style="display: inline;">
-              <input type="hidden" name="_method" value="DELETE">
-              <button type="submit">Excluir</button>
-            </form>
-            <a href="/produtos/{{this.id}}/edit">Editar</a>
-          </td>
-        </tr>
-        {{/each}}
-      </tbody>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each produtos}}
+            <tr>
+                <td><a href="/produtos/{{this.id}}">{{this.nome}}</a></td>
+                <td>R$ {{this.preco}}</td>
+                <td class="actions">
+                    <form action="/produtos/{{this.id}}/delete" method="POST" style="display: inline;">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit">Excluir</button>
+                    </form>
+                    <form action="/produtos/{{this.id}}/edit" method="GET" style="display: inline;">
+                        <button type="submit">Editar</button>
+                    </form>
+                </td>
+
+            </tr>
+            {{/each}}
+        </tbody>
     </table>
     {{else}}
     <p>Nenhum produto encontrado</p>
     {{/if}}
     <a class="button" href="/produtos/create">Criar Produto</a>
-  </main>
+</main>
