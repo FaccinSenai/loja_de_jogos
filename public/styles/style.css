@@ -408,6 +408,19 @@ footer {
   }
 }
 
+thead th {
+    text-decoration: none;
+    color: white;
+}
+a{
+    color: white;
+}
+
+.produto-header {
+    text-decoration: none;
+    color: white;
+}
+
 
 .dashboardpng {
     padding-top: 50px;
@@ -431,4 +444,41 @@ footer {
     100% {
         transform: scale(1);
     }
+}
+
+.container2{
+    padding-left: 20%;
+    margin-left: 20px;
+}
+
+.infogame{
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 10px; 
+    overflow: hidden; 
+    text-decoration: none;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color:white;
+}
+
+th {
+    background-color: #307ca0;
+    border-radius: 10px 10px 0 0; 
+    color: white;
+}
+
+tr:last-child td {
+    border-bottom: none; 
+}
+
+.actions button {
+    border-radius: 5px;
 }

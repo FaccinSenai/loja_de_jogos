@@ -1,10 +1,47 @@
+<div class="left-section">
+    <div class="sidebar">
+        <h2>My Docs</h2>
+        <div class="item active">
+            <a href="/">
+                <i class="ri-apps-line"></i>
+                <h3>Dashboard</h3>
+            </a>
+        </div>
+        <div class="item">
+            <a href="/produtos">
+                <i class="ri-folder-line"></i>
+                <h3>Product list</h3>
+            </a>
+        </div>
+        <div class="item">
+            <a href="/produtos/create">
+                <i class="ri-file-add-line"></i>
+                <h3>add product</h3>
+            </a>
+        </div>
+        <div class="item">
+            <a href="/settings">
+                <i class="ri-settings-3-line"></i>
+                <h3>Settings</h3>
+            </a>
+        </div>
+    </div>
+    <div class="sign-out">
+        <a href="/">
+        <i class="ri-logout-box-r-line"></i>
+        <h3>Sign Out</h3>
+        </a>
+    </div>
+</div>
+</div>
+
 <div class="box">
     <div class="item">
         <a href="/produtos/create" class="bx bx-cloud-upload custom-icon"></a>
     </div>
 </div>
 
-
+<div class='container2'>
 <header>
     <h1>Lista de Produtos</h1>
 </header>
@@ -13,7 +50,7 @@
     <table>
         <thead>
             <tr>
-                <th>Produto</th>
+                <th class="produto-header">Produto</th>
                 <th>Preço</th>
                 <th>Ações</th>
             </tr>
@@ -40,5 +77,7 @@
     {{else}}
     <p>Nenhum produto encontrado</p>
     {{/if}}
-    <a class="button" href="/produtos/create">Criar Produto</a>
+
 </main>
+
+</div>
