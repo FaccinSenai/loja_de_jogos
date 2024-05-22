@@ -1,37 +1,46 @@
 <h1>Lista de produtos</h1>
 
-<a href="/produtos/create" class="btn-create">Criar Produto</a>
+
+<div class="box">
+    <div class="item">
+        <a href="/produtos/create" class="bx bx-cloud-upload custom-icon"></a>
+    </div>
+</div>
+
 
 {{#if produtosSize}}
-<table border="1">
-    <thead>
-        <tr>
-            <th>Produto</th>
-            <th>Preço</th>
-            <th>Editar</th>
-            <th>Deletar</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each produtos}}
-        <tr>
-            <td>{{this.nome}}</td>
-            <td>{{this.preco}}</td>
-            <td class="center">
-                <form action="/produtos/{{this.id}}/edit" method="GET">
-                    <button type="submit" class="btn-edit">Editar</button>
-                </form>
-            </td>
-            <td class="center">
-                <form action="/produtos/{{this.id}}/delete" method="POST">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="btn-delete">Excluir</button>
-                </form>
-            </td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
+<div class="table-center">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Editar</th>
+                <th>Deletar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each produtos}}
+            <tr>
+                <td>{{this.nome}}</td>
+                <td>{{this.preco}}</td>
+                <td class="center">
+                    <form action="/produtos/{{this.id}}/edit" method="GET">
+                        <button type="submit" class="btn-edit">Editar</button>
+                    </form>
+                </td>
+                <td class="center">
+                    <form action="/produtos/{{this.id}}/delete" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn-delete">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
 {{else}}
 <p>Nenhum produto encontrado</p>
 {{/if}}
